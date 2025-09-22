@@ -2,6 +2,9 @@
 این پروژه یک پلی‌بوک کامل انسیبل برای هاردنینگ سرورهای Ubuntu 24.04 است.
 هدف، افزایش امنیت سیستم‌عامل مطابق با بهترین پرکتیس‌ها و نزدیک به CIS Benchmark و پروژه‌هایی مثل konstruktoid/hardening https://github.com/konstruktoid/hardening
 ساختار پروژه
+
+
+
 ansible-hardening/
 │
 ├── ansible.cfg
@@ -17,6 +20,8 @@ ansible-hardening/
     ├── logging.yml
     ├── apparmor.yml
     └── users.yml
+
+    
 main.yml → پلی‌بوک اصلی که همه رول‌ها را ایمپورت می‌کند.
 
 roles/ → شامل رول‌های مجزا برای هر بخش از هاردنینگ.
