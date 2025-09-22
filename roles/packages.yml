@@ -1,0 +1,16 @@
+- name: Remove unnecessary packages
+  apt:
+    name:
+      - telnet
+      - rsh-client
+      - rsh-redone-client
+      - talk
+      - xinetd
+      - tftp
+      - vsftpd
+    state: absent
+    purge: yes
+
+- name: Autoremove unused packages
+  apt:
+    autoremove: yes

@@ -1,0 +1,21 @@
+- name: Ensure auditd is installed
+  apt:
+    name: auditd
+    state: present
+
+- name: Enable auditd service
+  service:
+    name: auditd
+    state: started
+    enabled: true
+
+- name: Ensure journald persistent storage
+  lineinfile:
+    path: /etc/systemd/journald.conf
+    regexp: '^#?Storage='
+    line: "Storage=persistent"
+
+- name: Ensure logrotate is installed
+  apt:
+    name: logrotate
+    state: present

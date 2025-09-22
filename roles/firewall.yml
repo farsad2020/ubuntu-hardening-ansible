@@ -1,0 +1,26 @@
+- name: Ensure UFW is installed
+  apt:
+    name: ufw
+    state: present
+
+- name: Enable UFW with default deny incoming
+  ufw:
+    state: enabled
+    policy: deny
+    direction: incoming
+
+- name: Allow outgoing traffic
+  ufw:
+    state: enabled
+    policy: allow
+    direction: outgoing
+
+- name: Allow SSH from trusted IPs
+  ufw:
+    rule: allow
+    port: 22
+    proto: tcp
+    from_ip: "{{ item }}"
+  loop:
+    - "127.0.0.1"
+    - "192.168.1.0/24"

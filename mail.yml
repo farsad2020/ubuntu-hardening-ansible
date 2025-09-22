@@ -1,0 +1,13 @@
+- name: Ubuntu 24.04 Hardening
+  hosts: all
+  become: true
+
+  tasks:
+    - import_tasks: roles/common.yml
+    - import_tasks: roles/packages.yml
+    - import_tasks: roles/firewall.yml
+    - import_tasks: roles/ssh.yml
+    - import_tasks: roles/sysctl.yml
+    - import_tasks: roles/logging.yml
+    - import_tasks: roles/apparmor.yml
+    - import_tasks: roles/users.yml

@@ -1,0 +1,29 @@
+- name: Harden SSH configuration
+  block:
+    - lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin no'
+    - lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+    - lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?Port'
+        line: 'Port 2022'
+    - lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?ClientAliveInterval'
+        line: 'ClientAliveInterval 300'
+    - lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?ClientAliveCountMax'
+        line: 'ClientAliveCountMax 2'
+  notify: Restart SSH
+
+- name: Ensure SSH service is enabled and running
+  service:
+    name: ssh
+    state: started
+    enabled: true

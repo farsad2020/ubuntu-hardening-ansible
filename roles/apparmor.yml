@@ -1,0 +1,10 @@
+- name: Ensure apparmor is installed
+  apt:
+    name: apparmor
+    state: present
+
+- name: Ensure apparmor is enabled and running
+  service:
+    name: apparmor
+    state: started
+    enabled: true

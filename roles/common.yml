@@ -1,0 +1,27 @@
+- name: Set timezone to UTC
+  timezone:
+    name: UTC
+
+- name: Update system
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Install base security packages
+  apt:
+    name:
+      - unattended-upgrades
+      - apt-transport-https
+      - curl
+      - vim
+      - net-tools
+      - gnupg
+      - htop
+    state: present
+
+- name: Enable unattended-upgrades
+  lineinfile:
+    path: /etc/apt/apt.conf.d/20auto-upgrades
+    regexp: '^APT::Periodic::Unattended-Upgrade'
+    line: 'APT::Periodic::Unattended-Upgrade "1";'
+    create: yes
