@@ -18,7 +18,7 @@
 - name: Allow SSH from trusted IPs
   ufw:
     rule: allow
-    port: 22
+    port: 2022
     proto: tcp
     from_ip: "{{ item }}"
   loop:
