@@ -1,7 +1,6 @@
 - name: Remove unnecessary packages
   apt:
     name:
-      - telnet
       - rsh-client
       - rsh-redone-client
       - talk
