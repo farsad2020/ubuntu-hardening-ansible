@@ -1,4 +1,3 @@
-# ubuntu-hardening-ansible
 # Ubuntu 24.04 Hardening with Ansible
 
 این پروژه یک **پلی‌بوک کامل انسیبل** برای هاردنینگ سرورهای **Ubuntu 24.04** است.  
