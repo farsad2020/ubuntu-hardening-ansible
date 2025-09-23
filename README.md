@@ -12,21 +12,9 @@
 
 
 
-ansible-hardening/
-│
-├── ansible.cfg
-├── inventory/
-│ └── hosts.ini
-├── main.yml
-└── roles/
-├── common.yml
-├── packages.yml
-├── firewall.yml
-├── ssh.yml
-├── sysctl.yml
-├── logging.yml
-├── apparmor.yml
-└── users.yml
+<img width="688" height="344" alt="image" src="https://github.com/user-attachments/assets/3fe7d600-aa53-4b49-a6eb-9ab46d6838d6" />
+
+
 ---
 
 ## 🔐 چه چیزهایی هاردن می‌شوند؟
@@ -57,3 +45,5 @@ ansible-hardening/
    ```bash
    git clone https://github.com/farsad2020/ubuntu-hardening-ansible.git
    cd ubuntu-hardening-ansible
+
+نویسنده: فرزانه صادقی
